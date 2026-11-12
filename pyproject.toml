@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schema-ontology-validator"
+version = "1.0.0"
+description = "Production-grade YAML schema validator with declarative ontology rules"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Unlicensed" }
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+
+dependencies = [
+    "pyyaml>=6.0",
+    "anthropic>=0.7.0",
+]
+
+optional-dependencies = {
+    dev = [
+        "pytest>=7.0",
+        "pytest-cov>=4.0",
+        "mypy>=1.0",
+        "black>=23.0",
+        "ruff>=0.1.0",
+    ]
+}
+
+[project.scripts]
+ontology-validator = "schema_ontology.cli:main"
+
+[tool.setuptools]
+packages = ["schema_ontology"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"

@@ -1,0 +1,23 @@
+schema_version: "1.0"
+
+kinds:
+  - id: Service
+    apiVersion: v1
+    annotations:
+      - id: owner
+        scope: [Service]
+        required: true
+      - id: tier
+        scope: [Service]
+        enum: [tier-1, tier-2, tier-3]
+    labels:
+      - id: env
+        scope: [Service]
+        enum: [dev, prod]
+    spec:
+      type:
+        kind: enum
+        values: [microservice, lambda]
+
+tags:
+  max_count: 8
