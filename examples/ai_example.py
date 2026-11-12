@@ -68,13 +68,13 @@ def main():
         print(f"Issue: {violation.message}")
 
         try:
-            print("\n💡 Claude's Suggestion:")
+            print("\n💡 OpenAI's Suggestion:")
             suggestion = get_violation_suggestion(violation)
             for line in suggestion.split("\n"):
                 print(f"   {line}")
         except Exception as e:
             print(f"   Could not generate suggestion: {e}")
-            print("   (Make sure ANTHROPIC_API_KEY is set)")
+            print("   (Make sure OPENAI_API_KEY is set)")
 
     # Example 3: Explain for team
     print("\n" + "-"*70)
@@ -92,7 +92,7 @@ def main():
                 print(f"   {line}")
         except Exception as e:
             print(f"   Could not generate explanation: {e}")
-            print("   (Make sure ANTHROPIC_API_KEY is set)")
+            print("   (Make sure OPENAI_API_KEY is set)")
 
     # Example 4: Analyze schema
     print("\n" + "-"*70)
@@ -109,7 +109,7 @@ def main():
             print(f"   {line}")
     except Exception as e:
         print(f"   Could not analyze schema: {e}")
-        print("   (Make sure ANTHROPIC_API_KEY is set)")
+        print("   (Make sure OPENAI_API_KEY is set)")
 
     print("\n" + "="*70)
     print("Demo complete!")
