@@ -35,12 +35,12 @@ ontology-validator --ontology examples/ontology.yaml validate service.yaml
 
 ## 🤖 AI-Powered Suggestions
 
-Get Claude-powered recommendations for fixing violations and improving schemas.
+Get OpenAI-powered recommendations for fixing violations and improving schemas.
 
 ### Fix Violations with AI
 
 ```bash
-export ANTHROPIC_API_KEY=your-key-here
+export OPENAI_API_KEY=your-key-here
 ontology-validator --ontology examples/ontology.yaml suggest catalog/
 ```
 
@@ -103,7 +103,7 @@ violations = validate_entity(entity_dict, ontology)
 
 for v in violations:
     print(f"{v.code}: {v.message}")
-    suggestion = get_violation_suggestion(v)  # Get Claude's recommendation
+    suggestion = get_violation_suggestion(v)  # Get OpenAI's recommendation
     print(f"Fix: {suggestion}")
 ```
 
